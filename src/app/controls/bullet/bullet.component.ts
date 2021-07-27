@@ -17,6 +17,10 @@ export class BulletComponent implements OnInit {
   @Input() status: keyof typeof StatusBulletColor = 'pending';
   @Output() onClick = new EventEmitter<void>();
 
+  internalClick() {
+    this.onClick.emit();
+  }
+
   constructor() { }
 
   ngOnInit(): void {
