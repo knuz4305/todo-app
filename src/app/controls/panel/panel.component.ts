@@ -14,9 +14,14 @@ const PaddingConfig = {
 export class PanelComponent implements OnInit {
 
   @Input() padding: keyof typeof PaddingConfig = 'medium';
+  @Input() height = '';
 
   getPadding() {
     return PaddingConfig[this.padding];
+  }
+
+  getHeight() {
+    return this.height;
   }
 
   constructor() { }

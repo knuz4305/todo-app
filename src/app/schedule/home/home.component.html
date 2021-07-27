@@ -1,26 +1,76 @@
+<!--<div class="container">
+</div>
+<div class="break"></div>
+<div class="row">
+  <div class="col-2">
+    <app-new-task></app-new-task>
+  </div>
+  <div>
+    <app-new-columntask></app-new-columntask>
+  </div>
+</div>
+-->
+
 <div class="container">
-    <h1>
-        TO DO
-    </h1>
-    <div class="break"></div>
-    <app-button (onClick)="onClick()">
-      <strong>AGREGAR</strong>
-    </app-button>
-    <div class="break"></div>
-    <div class="section">
-        <app-panel padding="narrow">
-          <div style="margin-top: 25px;" *ngFor="let task of tasks">
-            <app-bullet
-              [displayText]="task.displayText"
-              [status]="task.status"
-              (onClick)="setSelectedTask(task)">
-            </app-bullet>
-          </div>
-        </app-panel>
+  <div class="section">
+    <div>
+      <h4>
+        TAREAS SIN <br/>CATALOGAR
+      </h4>
     </div>
-    <div class="section">
-        <app-panel padding="narrow">
-          <app-task-editor [task]="selectedTask"></app-task-editor>
-        </app-panel>
+  </div>
+  <div class="section">
+    <div class="container">
+      <h4>
+        Iniciadas
+      </h4>
+      <div class="break"></div>
+      <app-panel padding="narrow">
+        <div style="margin-top: 25px;" *ngFor="let task of tasks">
+          <app-task-card></app-task-card>
+        </div>
+      </app-panel>
     </div>
+  </div>
+  <div class="section">
+    <div class="container">
+      <h4>
+        Bloqueadas
+      </h4>
+      <div class="break"></div>
+      <app-panel padding="narrow">
+        <div style="margin-top: 25px;" *ngFor="let task of tasks">
+          <app-task-card></app-task-card>
+        </div>
+      </app-panel>
+    </div>
+  </div>
+  <div class="section">
+    <div class="container">
+      <h4>
+        Finalizadas
+      </h4>
+      <div class="break"></div>
+      <app-panel padding="narrow">
+        <div style="margin-top: 25px;" *ngFor="let task of tasks">
+          <app-task-card></app-task-card>
+        </div>
+      </app-panel>
+    </div>
+  </div>
+</div>
+
+<div class="break"></div>
+
+<div class="container">
+  <div class="section">
+    <app-panel padding="narrow" height="30%">
+      <app-new-task></app-new-task>
+    </app-panel>
+  </div>
+  <div class="section">
+    <app-panel padding="narrow" height="30%">
+      <app-new-columntask></app-new-columntask>
+    </app-panel>
+  </div>
 </div>
